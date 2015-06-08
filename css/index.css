@@ -1,0 +1,480 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-weight: normal;
+}
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.col-lg-12, .col-md-12, .col-md-12, .col-xs-12, .col-lg-11, .col-md-11, .col-md-11, .col-xs-11, .col-lg-10, .col-md-10, .col-md-10, .col-xs-10, .col-lg-9, .col-md-9, .col-md-9, .col-xs-9,
+.col-lg-8, .col-md-8, .col-md-8, .col-xs-8, .col-lg-7, .col-md-7, .col-md-7, .col-xs-7, .col-lg-6, .col-md-6, .col-md-6, .col-xs-6, .col-lg-5, .col-md-5, .col-md-5, .col-xs-5,
+.col-lg-4, .col-md-4, .col-md-4, .col-xs-4, .col-lg-3, .col-md-3, .col-md-3, .col-xs-3, .col-lg-2, .col-md-2, .col-md-2, .col-xs-2, .col-lg-1, .col-md-1, .col-md-1, .col-xs-1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+img {
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+}
+
+.app {
+    background: url(../_img/bg2.jpg) no-repeat;
+}
+
+.mainLogo {
+    margin-bottom: 30px;
+}
+
+
+#login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    overflow: hidden;
+    background: url(../_img/bgMain.jpg) no-repeat;
+}
+
+#main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: url(../_img/bg2.jpg) no-repeat;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#operasyonCevabi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 0px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+
+#sub1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 0px;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+}
+
+#sub2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 0px;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+}
+
+.header {
+    background: #e4e4e4;
+    padding: 20px;
+}
+
+.home {
+    padding-top: 20px;
+}
+
+.operasyonCevabiBlok {
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 50%;
+    font-size: 30px;
+}
+
+.footer {
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+    background: #212121;
+    width: 100%;
+    font-size: 50% !important;
+}
+
+.copyright {
+    margin-top: 10px;
+}
+
+.dn img {
+    float: right;
+}
+
+.loginPanel {
+    margin: 0px auto;
+    margin-top: 50%;
+}
+
+    .loginPanel input[type="text"] {
+        width: 100%;
+        margin-bottom: 5px;
+        height: 40px;
+        background: rgba(42,42,42,0.5);
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border: 0px solid #000000;
+    }
+
+.loginBtn a {
+    display: block;
+    background: #e54e1b;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+}
+
+.mainWebAd {
+    margin-top: 20px;
+    text-align: center;
+}
+
+    .mainWebAd a {
+        color: #000;
+        text-decoration: none;
+    }
+
+.userNameHeader {
+    color: #fff;
+    background: #e54e1b;
+    padding: 10px;
+}
+
+.pageTitle {
+    float: right;
+}
+
+.temizle {
+    clear: both;
+}
+
+.menuContainer {
+    padding: 10px;
+}
+
+.btnMenu {
+    padding: 10px;
+    padding-left: 20px;
+    margin-top: 5px;
+    background: #f0ab48;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+}
+
+.btnMenu:hover {
+    background: #353535;
+}
+
+.btnTxt {
+    margin-left: 20px;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.profilDetay {
+    color: #000;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+    .profilDetay input[type="text"] {
+        width: 100%;
+        margin-top: 5px;
+        height: 40px;
+        background: #e7e7e7;
+        color: #000;
+        padding: 15px;
+        border: 1px solid #f2f2f2;
+        -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+        -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+        box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+        border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border: 0px solid #000000;
+    }
+
+.kaydetBtn a {
+    display: block;
+    background: #f0ab48;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+}
+
+.duyurular {
+    overflow: auto;
+}
+
+.duyuruKapsayici {
+    border-bottom: 1px solid #b6b6b6;
+    padding: 20px;
+    color: #333;
+}
+
+    .duyuruKapsayici span {
+        font-weight: bold;
+        color: #000;
+    }
+
+.duyuruTarih {
+    color: #e54e1b !important;
+}
+
+.operasyonSayisi {
+    background: #fff;
+    color: #e54e1b;
+    padding: 5px 20px 5px 20px;
+    font-weight: bold;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000;
+}
+
+.tamamlananOperasyonKapsayici {
+    overflow: auto;
+}
+
+.tamamlananOperasyon {
+    padding: 20px;
+    border-bottom: 1px solid #b6b6b6;
+}
+
+    .tamamlananOperasyon span {
+        font-weight: bold;
+    }
+
+
+.tamamlananOperasyonTarih {
+    color: #e54e1b !important;
+}
+
+.operasyonCagrilariKapsayici {
+    overflow: auto;
+}
+
+.operasyonCagrisi {
+    border-bottom: 1px solid #b6b6b6;
+    padding: 20px;
+}
+
+.operasyonCagrisiDurum {
+}
+
+.operasyonTarih {
+    color: #e54e1b;
+    font-weight: bold;
+}
+
+.fotografKapsayici {
+    overflow: auto;
+}
+
+.fotograf {
+    padding: 5px;
+}
+
+.yeniFotografEkleBtn, .mesajGonderBtn {
+    padding: 15px;
+    margin: 5px;
+    background: #f0ab48;
+    color: #fff;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+}
+
+
+
+.mesajIptalBtn {
+    padding: 15px;
+    margin: 5px;
+    background: #c5c5c5;
+    color: #565656;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+}
+
+.iletisimBilgileri {
+    padding: 20px;
+}
+
+    .iletisimBilgileri span {
+        color: #e54e1b;
+        font-weight: bold;
+    }
+
+.mesajGonderKapsayici {
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+    .mesajGonderKapsayici input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 40px;
+        background: #e7e7e7;
+        color: #000;
+        padding: 15px;
+        border: 1px solid #f2f2f2;
+        border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border: 0px solid #000000;
+    }
+
+    .mesajGonderKapsayici textarea {
+        height: 150px;
+        background: #e7e7e7;
+        color: #000;
+        padding: 15px;
+        border: 1px solid #f2f2f2;
+        width: 100%;
+        border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border: 0px solid #000000;
+    }
+
+.operasyonCevabiOnayBtn {
+    padding: 15px;
+    margin: 5px;
+    background: #f0ab48;
+    color: #fff;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+.operasyonCevabiRedBtn {
+    padding: 15px;
+    margin: 5px;
+    background: #c5c5c5;
+    color: #565656;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.49);
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border: 0px solid #000000;
+    margin-top: 10px;
+}

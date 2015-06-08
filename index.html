@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- 
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+--> 
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" type="text/css" href="_css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="_css/index.css" />
+<script type="text/javascript" src="_js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="_js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_js/index.js"></script>
+<title>KK Kaliteli Kurumsal</title>
+</head>
+<body>
+<div class="app mainConts">
+    <div id="main" class="mainConts">
+    </div>
+<div class="clearfix"></div>
+<div id="operasyonCevabi" class="mainConts subConts"></div>
+<div id="sub1" class="mainConts subConts"> </div>
+<div id="sub2" class="mainConts subConts"> </div>
+<div id="login" class="mainConts col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  
+  <div class="loginPanel col-xs-push-1 col-md-push-1 col-lg-push-1 col-sm-push-1  col-lg-10 col-md-10 col-sm-10 col-xs-10 ">
+  <div class="mainLogo">
+    <div class="logo col-xs-push-1 col-md-push-1 col-lg-push-1 col-sm-push-1 col-lg-10 col-md-10 col-sm-10 col-xs-10"><img src="_img/logo.png"></div>
+    <div class="clearfix"></div>
+  </div>
+    <div class="userName">
+      <input id="userName" type="text">
+    </div>
+    <div class="pass">
+      <input id="pass" type="text">
+    </div>
+    <div class="loginBtn"> <a href="#" onClick="login();">Giriş</a> </div>
+    <div id="logNote"></div>
+    <div class="mainWebAd col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="" target="_blank">www.kk-ik.com.tr</a></div>
+  </div>  
+  <div class="row footer">
+    <div class="copyrigt col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-left">Copyright © 2015 KK Kaliteli Kurumsal Tüm Hakları Saklıdır.</div>
+    <div class="dn col-lg-2 col-md-2 col-sm-2 col-xs-2 pull-right"><a href="" target="_blank"><img src="_img/dn.png"></a></div>
+    <div class="clearfix"></div>
+  </div>
+</div> 
+<script type="text/javascript">
+            app.initialize();
+			//document.addEventListener("backbutton", onBackKeyDown, false);
+			x = $(document).width();
+			y = $(document).height();
+			setTimeout(function(){ $('.mainConts').css({'height':y+'px','width':x+'px'}); $('.subConts').css({'margin-left':'-'+x+'px'});  },50);
+			
+			function login(){
+				user = $('#userName').val();
+				pass = $('#pass').val();
+				formdata = {user:user,pass:pass};
+				$.ajax({
+					type:"POST",
+					url:"http://detaynet.net/2k/trans.php?login",
+					crossDomain:true,
+					data:formdata,
+					success: function(reply_text){											
+						$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?main",
+							data:formdata,
+							success: function(response){
+								$("#main").html(response);
+								$("#login").animate({'height':'0px'},300);
+							}
+						});						
+					}
+					
+				});
+				 
+			}
+			        
+			function profil(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?profil",
+							data:formdata,
+							success: function(response){
+								$("#sub1").html(response);
+								$("#sub1").animate({'margin-left':'0px'},300);
+								MH = parseInt($('.header').height()) + parseInt($('.userNameHeader').height()) + parseInt($('.footer').height()) + 80;
+								$('.profilDetay').css({'height':(y-MH)+'px'});
+							}
+						});						
+			}
+			
+			function goHome(){
+				$(".subConts").animate({'margin-left':'-'+x+'px'},250);
+			}
+			
+			function goContact(){
+				$("#sub2").animate({'margin-left':'-'+x+'px'},250);
+			}
+			      
+			
+			function duyurular(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?duyurular",
+							data:formdata,
+							success: function(response){
+								$("#sub1").html(response);
+								$("#sub1").animate({'margin-left':'0px'},300);
+								MH = parseInt($('.header').height()) + parseInt($('.userNameHeader').height()) + parseInt($('.footer').height()) + 80;
+								$('.duyurular').css({'height':(y-MH)+'px'});
+							}
+						});						
+			}
+			                 
+			function operasyonCagrilari(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?operasyonCagrilari",
+							data:formdata,
+							success: function(response){
+								$("#sub1").html(response);
+								$("#sub1").animate({'margin-left':'0px'},300);
+								MH = parseInt($('.header').height()) + parseInt($('.userNameHeader').height()) + parseInt($('.footer').height()) + 80;
+								$('.operasyonCagrilariKapsayici').css({'height':(y-MH)+'px'});
+							}
+						});						
+			}
+			     
+			function tamamlananOperasyonlar(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?tamamlananOperasyonlar",
+							data:formdata,
+							success: function(response){
+								$("#sub1").html(response);
+								$("#sub1").animate({'margin-left':'0px'},300);
+								MH = parseInt($('.header').height()) + parseInt($('.userNameHeader').height()) + parseInt($('.footer').height()) + 80;
+								$('.tamamlananOperasyonKapsayici').css({'height':(y-MH)+'px'});
+							}
+						});						
+			}
+			  
+			function fotograflarim(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?fotograflarim",
+							data:formdata,
+							success: function(response){
+								$("#sub1").html(response);
+								$("#sub1").animate({'margin-left':'0px'},300);
+								MH = parseInt($('.header').height()) + parseInt($('.userNameHeader').height()) + parseInt($('.footer').height()) + 80;
+								$('.fotografKapsayici').css({'height':(y-MH)+'px'});
+							}
+						});				 		
+			}
+			
+			function iletisim(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?iletisim",
+							data:formdata,
+							success: function(response){
+								$("#sub1").html(response);
+								$("#sub1").animate({'margin-left':'0px'},300);
+							}
+						});						
+			}
+			
+			function mesajGonder(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?mesajGonder",
+							data:formdata,
+							success: function(response){
+								$("#sub2").html(response);
+								$("#sub2").animate({'margin-left':'0px'},300);
+							}
+						});						
+			} 
+			
+			function operasyonCevabi(){
+				$.ajax({
+							type:"POST",
+							url:"http://detaynet.net/2k/trans.php?operasyonCevabi",
+							data:formdata,
+							success: function(response){
+								$("#operasyonCevabi").html(response);
+								$("#operasyonCevabi").css({'display':'block'},250);
+								$("#operasyonCevabi").css({'margin-left':'0px'},300);
+							}
+						});						
+			}
+			
+
+			function operasyonCevabiKabul(){
+				$("#operasyonCevabi").css({'display':'none'},250);
+			}
+
+
+			
+
+        </script>
+</body>
+</html>
